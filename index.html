@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Imagen de Fondo</title>
+    <!-- Carga de Tailwind CSS para el diseño rápido y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter recomendada para la estética moderna -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Define la URL de la imagen de fondo. 
+            He usado una imagen de placeholder aleatoria de paisaje.
+            Puedes reemplazar esta URL con la ruta a tu propia imagen.
+            */
+            background-image: url('fondo.jpg');
+            background-size: cover; /* Asegura que la imagen cubra todo el viewport */
+            background-position: center; /* Centra la imagen */
+            background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+            min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura del viewport */
+            display: flex; /* Necesario para centrar el contenido */
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Crea una capa oscura semitransparente sobre la imagen de fondo para mejorar la legibilidad del texto */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Color negro con 60% de opacidad */
+            z-index: 1;
+        }
+
+        /* El contenedor de contenido principal debe estar por encima del overlay */
+        .content-container {
+            z-index: 10; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Capa de superposición para mejorar la legibilidad -->
+    <div class="overlay"></div>
+
+    <!-- Contenedor principal del contenido centrado -->
+    <div class="content-container p-6 md:p-12 max-w-4xl w-full mx-auto text-center">
+        <div class="bg-white/10 backdrop-blur-md p-8 sm:p-10 rounded-xl shadow-2xl border border-white/20">
+            <!-- Título Principal -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                ¡Bienvenido a Nuestra Web!
+            </h1>
+            
+            <!-- Subtítulo o Mensaje Central -->
+            <p class="text-lg sm:text-xl text-gray-200 mb-8 font-light max-w-3xl mx-auto">
+                Esta es una demostración de una página web moderna con un fondo cautivador y contenido claro.
+            </p>
+
+            <!-- Botón de Llamada a la Acción (Call to Action) -->
+            <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                Explorar Ahora
+            </button>
+
+            <!-- Ejemplo de Contenido Adicional -->
+            <div class="mt-10 pt-6 border-t border-white/10">
+                <p class="text-sm text-gray-300">
+                    Diseño totalmente responsivo, adaptado para móviles y ordenadores.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para agregar interacción si fuera necesario (actualmente vacío) -->
+    <script>
+        // Aquí podrías agregar JavaScript para manejar eventos o animaciones
+        document.querySelector('button').addEventListener('click', () => {
+            console.log("Botón 'Explorar Ahora' presionado.");
+        });
+    </script>
+
+</body>
+</html>
+
